@@ -19,6 +19,17 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import { HamburgerMenuIcon } from "@radix-ui/react-icons";
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetDescription,
+  SheetFooter,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet"
 
 function menu(){
   return(
@@ -54,15 +65,10 @@ function menu(){
   )
 }
 
-export default function Header(){
-    return(
-        <>
-        <div className="flex content-center justify-between p-5 border-b-4 border-slate-300">
-            <div className="flex content-center justify-between">
-                <h2>CVRIZZ</h2>
-            </div>
-            <div className="">
-              <div className="flex space-evenly">
+function DesktopMenu(){
+  return(
+    <>
+    <div className="flex space-evenly">
             {menu()}
         <DropdownMenu>
   <DropdownMenuTrigger>
@@ -86,8 +92,75 @@ export default function Header(){
     </DropdownMenuItem>
   </DropdownMenuContent>
 </DropdownMenu>
-
          </div>
+    </>
+  )
+}
+
+function detectDeviceType(): string {
+  const userAgent = navigator.userAgent.toLowerCase();
+
+  if (/mobi|android/i.test(userAgent)) {
+      return 'mobile';
+  } else if (/tablet|ipad|playbook|silk/i.test(userAgent)) {
+      return 'tablet';
+  } else {
+      return 'desktop';
+  }
+}
+
+function Mobileslide(){
+  return(
+    <>
+    <Sheet>
+  <SheetTrigger><HamburgerMenuIcon/></SheetTrigger>
+  <SheetContent>
+    <SheetHeader>
+      <SheetTitle>
+        <div className="mt-10 flex justify-between content-center">
+          <div>
+            Sushil Pandey
+          </div>
+          <div>
+          <Avatar>
+         <AvatarImage src="https://github.com/shadcn.png" />
+         <AvatarFallback>CN</AvatarFallback>
+        </Avatar>
+          </div>
+        </div>
+      </SheetTitle>
+    </SheetHeader>
+    <ul>
+      <li className="pt-4 pl-2">
+        <Link href={'/Resume'}>Resume</Link>
+      </li>
+      <li className="pt-4 pl-2">
+        <Link href={'/cover'}>Cover Letter</Link>
+         
+      </li>
+      <li className="pt-4 pl-2">
+        <Link href={'/links'}>Links</Link>
+      </li>
+      <li className="pt-4 pl-2">
+        <Link href={"/logout"}>Logout</Link>
+      </li>
+    </ul>
+  </SheetContent>
+</Sheet>
+
+    </>
+  )
+}
+
+export default function Header(){
+    return(
+        <>
+        <div className="flex content-center justify-between p-5 border-b-4 border-slate-300">
+            <div className="flex content-center justify-between">
+                <h2>CVRIZZ</h2>
+            </div>
+            <div className="">
+              {(detectDeviceType()=="mobile")?<Mobileslide/>:<DesktopMenu/>}
             </div>
         </div>
         </>
