@@ -1,28 +1,38 @@
 "use client";
 import { GridIcon, ListBulletIcon } from "@radix-ui/react-icons";
+import { useState } from "react";
 import Header from "../components/ui/Header";
 import {
     Menubar,
     MenubarMenu,
     MenubarTrigger,
   } from "@/components/ui/menubar"
+import ResumeGrid from "../components/ResumeGrid";
 
 
 export default function Resume(){
+    const [selectedItem, setSelectedItem] = useState('grid');
+    const handleSelectItem = (item:string) => {
+        setSelectedItem(item);
+      };    
     function MenubarDemo() {
         return (
-          <Menubar>
-           <MenubarMenu>
-              <MenubarTrigger>
-                <GridIcon/> <p className="pl-2 pr-2">Grid</p>
+            <div className="flex">
+            <Menubar>
+            <MenubarMenu>
+              <MenubarTrigger onClick={() => handleSelectItem('grid')}>
+                <GridIcon />
+                <p className={`pl-2 pr-2`}>Grid</p>
               </MenubarTrigger>
             </MenubarMenu>
             <MenubarMenu>
-              <MenubarTrigger>
-                <ListBulletIcon/> <p className="pl-2 pr-2">List</p>
+              <MenubarTrigger onClick={() => handleSelectItem('list')}>
+                <ListBulletIcon />
+                <p className={`pl-2 pr-2`}>List</p>
               </MenubarTrigger>
             </MenubarMenu>
-          </Menubar>
+            </Menubar>
+          </div>
         )
       }
     function Heading(){
@@ -43,12 +53,13 @@ export default function Resume(){
         )
     }
 
-    
+
     return(
         <>
         <Header/>
         <div className="mx-8 mt-3">
         <Heading/>
+        {(selectedItem=='grid')?<ResumeGrid/>:" "}
         </div>
         </>
     )
