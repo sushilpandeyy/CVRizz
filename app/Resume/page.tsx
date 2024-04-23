@@ -14,9 +14,12 @@ import Link from "next/link";
 
 export default function Resume(){
     const [selectedItem, setSelectedItem] = useState('grid');
-    const handleSelectItem = (item:string) => {
-        setSelectedItem(item);
-      };    
+    function handleSelectItem(item:string) {
+      setSelectedItem(item);
+      if (item === 'grid' && typeof navigator !== 'undefined') {
+          console.log(navigator.userAgent);
+      }
+  }    
     function MenubarDemo() {
         return (
             <div className="flex">
