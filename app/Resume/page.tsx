@@ -2,6 +2,7 @@
 import { GridIcon, ListBulletIcon } from "@radix-ui/react-icons";
 import { useState } from "react";
 import Header from "../components/ui/Header";
+import { platform } from 'os';
 import {
     Menubar,
     MenubarMenu,
@@ -9,7 +10,7 @@ import {
   } from "@/components/ui/menubar"
 import ResumeGrid from "../components/ResumeGrid";
 import ResumeList from "../components/ResumeList";
-
+import Link from "next/link";
 
 export default function Resume(){
     const [selectedItem, setSelectedItem] = useState('grid');
