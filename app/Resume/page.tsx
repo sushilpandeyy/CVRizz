@@ -2,7 +2,6 @@
 import { GridIcon, ListBulletIcon } from "@radix-ui/react-icons";
 import { useState } from "react";
 import Header from "../components/ui/Header";
-import { platform } from 'os';
 import {
     Menubar,
     MenubarMenu,
@@ -16,9 +15,6 @@ export default function Resume(){
     const [selectedItem, setSelectedItem] = useState('grid');
     function handleSelectItem(item:string) {
       setSelectedItem(item);
-      if (item === 'grid' && typeof navigator !== 'undefined') {
-          console.log(navigator.userAgent);
-      }
   }    
     function MenubarDemo() {
         return (
