@@ -8,6 +8,7 @@ import {
     MenubarTrigger,
   } from "@/components/ui/menubar"
 import ResumeGrid from "../components/ResumeGrid";
+import ResumeList from "../components/ResumeList";
 
 
 export default function Resume(){
@@ -20,13 +21,13 @@ export default function Resume(){
             <div className="flex">
             <Menubar>
             <MenubarMenu>
-              <MenubarTrigger onClick={() => handleSelectItem('grid')}>
+              <MenubarTrigger onClick={() => handleSelectItem('grid')} className={(selectedItem=='grid')?"bg-accent":""}>
                 <GridIcon />
                 <p className={`pl-2 pr-2`}>Grid</p>
               </MenubarTrigger>
             </MenubarMenu>
             <MenubarMenu>
-              <MenubarTrigger onClick={() => handleSelectItem('list')}>
+              <MenubarTrigger onClick={() => handleSelectItem('list')} className={(selectedItem=='list')?"bg-accent":""}>
                 <ListBulletIcon />
                 <p className={`pl-2 pr-2`}>List</p>
               </MenubarTrigger>
@@ -59,7 +60,7 @@ export default function Resume(){
         <Header/>
         <div className="mx-8 mt-3">
         <Heading/>
-        {(selectedItem=='grid')?<ResumeGrid/>:" "}
+        {(selectedItem=='grid')?<ResumeGrid/>:<ResumeList/>}
         </div>
         </>
     )
