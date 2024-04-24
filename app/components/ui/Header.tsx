@@ -97,16 +97,15 @@ function DesktopMenu(){
   )
 }
 
-function detectDeviceType(): string {
-  const userAgent = navigator.userAgent.toLowerCase();
 
-  if (/mobi|android/i.test(userAgent)) {
-      return 'mobile';
-  } else if (/tablet|ipad|playbook|silk/i.test(userAgent)) {
-      return 'tablet';
-  } else {
-      return 'desktop';
-  }
+function detectDeviceType(userAgent: string): string {
+    if (/mobi|android/i.test(userAgent)) {
+        return 'mobile';
+    } else if (/tablet|ipad|playbook|silk/i.test(userAgent)) {
+        return 'tablet';
+    } else {
+        return 'desktop';
+    }
 }
 
 function Mobileslide(){
@@ -153,6 +152,7 @@ function Mobileslide(){
 }
 
 export default function Header(){
+  const userAgent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36';
     return(
         <>
         <div className="flex content-center justify-between p-5 border-b-4 border-slate-300">
@@ -160,7 +160,7 @@ export default function Header(){
                 <h2>CVRIZZ</h2>
             </div>
             <div className="">
-              {(detectDeviceType()=="mobile")?<Mobileslide/>:<DesktopMenu/>}
+              {(detectDeviceType(userAgent)=="mobile")?<Mobileslide/>:<DesktopMenu/>}
             </div>
         </div>
         </>
