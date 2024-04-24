@@ -36,32 +36,34 @@ export default function Resume(){
           </div>
         )
       }
-    function Heading(){
-        return (
-            <>
-             <div className="flex justify-between content-center">
-            <div>
-            <h2 className="scroll-m-20 text-3xl tracking-tight">
-            RESUME<br/></h2>
-            </div>
-            <div className="flex items-center justify-center">
-            <div className="flex items-center justify-between">
-                <MenubarDemo/>
-            </div>
-            </div>
-            </div>
-            </>
-        )
-    }
-
+   // function Heading(){
+   //     return (
+   //         <>
+   //          <div className="flex justify-between content-center">
+   //         <div>
+   //         <h2 className="scroll-m-20 text-3xl tracking-tight">
+   //         RESUME<br/></h2>
+   //         </div>
+   //         <div className="flex items-center justify-center">
+   //         <div className="flex items-center justify-between">
+   //             <MenubarDemo/>
+   //         </div>
+   //         </div>
+   //         </div>
+   //         </>
+   //     )
+   // }
+   // <>
+   //     <Header/>
+   //     <div className="mx-8 mt-3">
+   //     <Heading/>
+   //     {(selectedItem=='grid')?<ResumeGrid/>:<ResumeList/>}
+   //     </div>
+   //     </>
 
     return(
         <>
         <Header/>
-        <div className="mx-8 mt-3">
-        <Heading/>
-        {(selectedItem=='grid')?<ResumeGrid/>:<ResumeList/>}
-        </div>
         </>
     )
 }
