@@ -5,6 +5,10 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { BackpackIcon, CrumpledPaperIcon, LightningBoltIcon, Link2Icon, Pencil2Icon, PersonIcon } from "@radix-ui/react-icons";
 import Profile from "./components/profile";
 import Links from "./components/links";
+import Experience from "./components/Experience";
+import Education from "./components/Education";
+import Skills from "./components/Skills";
+import Projects from "./components/Projects";
 
 function Alltabs(){
     return (
@@ -22,6 +26,18 @@ function Alltabs(){
         </TabsContent>
         <TabsContent value="Link">
            <Links/>
+        </TabsContent>
+        <TabsContent value="Experience">
+           <Experience/>
+        </TabsContent>
+        <TabsContent value="Project">
+          <Projects/>
+        </TabsContent>
+        <TabsContent value="Skills">
+          <Skills/>
+        </TabsContent>
+        <TabsContent value="Education">
+          <Education/>
         </TabsContent>
         </Tabs>
     )
