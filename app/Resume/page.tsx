@@ -7,7 +7,7 @@ import ResumeList from "../components/ResumeList";
 import { Menubar, MenubarMenu, MenubarTrigger } from "@/components/ui/menubar";
 import Link from "next/link";
 
-export default function resume() {
+export default function Resume() {
     const [selectedItem, setSelectedItem] = useState('grid');
 
     function handleSelectItem(item: string) {
@@ -19,8 +19,7 @@ export default function resume() {
             <div className="flex">
                 <Menubar>
                     <MenubarMenu>
-                        <MenubarTrigger onClick={() => handleSelectItem('grid')} className={selectedItem === 'grid' ? "bg-accent" : ""}>
-                            <GridIcon />
+                        <MenubarTrigger onClick={() => handleSelectItem('grid')} className={selectedItem === 'grid' ? "bg-accent" : ""}><GridIcon />
                             <p className={`pl-2 pr-2`}>Grid</p>
                         </MenubarTrigger>
                     </MenubarMenu>
