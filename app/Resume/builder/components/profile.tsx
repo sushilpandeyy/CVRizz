@@ -12,26 +12,32 @@ import {
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 
-export default function profile(){
+export default function Profile(){
     return (
         <>
          <Card>
           <CardHeader>
-            <CardTitle>Account</CardTitle>
+            <CardTitle>Profile</CardTitle>
             <CardDescription>
-              Make changes to your account here. Click save when you're done.
+            Edit personal details
             </CardDescription>
           </CardHeader>
-          <CardContent className="space-y-2">
-            <div className="space-y-1">
-              <Label htmlFor="name">Name</Label>
+          <CardContent>
+            <div className="mb-3">
+              <Label htmlFor="name">Full name</Label>
               <Input id="name" defaultValue="Pedro Duarte" />
             </div>
-            <div className="space-y-1">
-              <Label htmlFor="username">Username</Label>
-              <Input id="username" defaultValue="@peduarte" />
-            </div>
-          </CardContent>
+            <div className="flex justify-around content-center mb-3">
+            <div className="w-1/2 mr-2">
+              <Label htmlFor="name">Email</Label>
+              <Input id="Email" type="email" defaultValue="Pedro@gmai.com" />
+            </div> 
+            <div className="w-1/2 ml-2">
+              <Label htmlFor="name">Phone</Label>
+              <Input id="Email" type="number" defaultValue="Pedro@gmai.com" />
+            </div>  
+            </div>        
+            </CardContent>
           <CardFooter>
             <Button>Save changes</Button>
           </CardFooter>
