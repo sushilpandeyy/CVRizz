@@ -4,6 +4,7 @@ import Header from "@/app/components/ui/Header";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { BackpackIcon, CrumpledPaperIcon, LightningBoltIcon, Link2Icon, Pencil2Icon, PersonIcon } from "@radix-ui/react-icons";
 import Profile from "./components/profile";
+import Links from "./components/links";
 
 function Alltabs(){
     return (
@@ -18,6 +19,9 @@ function Alltabs(){
         </TabsList>
         <TabsContent value="Profile">
            <Profile/>
+        </TabsContent>
+        <TabsContent value="Link">
+           <Links/>
         </TabsContent>
         </Tabs>
     )
