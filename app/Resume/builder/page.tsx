@@ -2,13 +2,21 @@
 
 import Header from "@/app/components/ui/Header";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { BackpackIcon, CrumpledPaperIcon, LightningBoltIcon, Link2Icon, Pencil2Icon, PersonIcon } from "@radix-ui/react-icons";
+import { BackpackIcon, CrumpledPaperIcon, FileTextIcon, LightningBoltIcon, Link2Icon, Pencil2Icon, PersonIcon } from "@radix-ui/react-icons";
 import Profile from "./components/profile";
 import Links from "./components/links";
 import Experience from "./components/Experience";
 import Education from "./components/Education";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
 
 function Alltabs(){
     return (
@@ -41,6 +49,31 @@ function Alltabs(){
         </TabsContent>
         </Tabs>
     )
+}
+
+function Rightbar(){
+  return (
+    <>
+    <div className="flex content-center justify-between">
+      <div>
+        <Card>
+          jks
+        </Card>
+      </div>
+      <div>
+        <div className="flex flex-col">
+          <Card>
+          <CardContent>
+            <div className="pt-10">
+          <FileTextIcon/>
+          </div>
+          </CardContent>
+          </Card>
+        </div>
+      </div>
+    </div>
+    </>
+  )
 }
 
 export default function Build() {
